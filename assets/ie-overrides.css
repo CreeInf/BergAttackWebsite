@@ -1,0 +1,19 @@
+﻿/*!
+ * Layout: Album Responsive
+ * $Id: ie-overrides.less ie-overrides.less ie-overrides.less ie-overrides.less $
+ * Copyright Zeta Software GmbH 2024
+ */
+
+div.zpieItem.zpieElement[data-context="logo"],
+div.zpieItem.zpieElement[data-context="webtitle"],
+div.zpieItem.zpieElement[data-context="search"] {
+  position: fixed !important;
+}
+#sidebar {
+  z-index: 6001;
+}
+div.zpieItem.zpieElement[data-context="logo"],
+div.zpieItem.zpieElement[data-context="webtitle"],
+div.zpieItem.zpieElement[data-context="search"] {
+  z-index: 6002;
+}
