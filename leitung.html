@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Berg Attack — Leitung</title>
+  <link rel="stylesheet" href="theme.css"/>
+  <link rel="stylesheet" href="base.css"/>
+  <style>
+    .team-grid {
+      display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:2px;
+      background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.05);
+      margin-bottom:4rem;
+    }
+    .team-card {
+      background:var(--bg-coal); padding:2.5rem 2rem;
+      transition:background 0.25s; position:relative; overflow:hidden;
+    }
+    .team-card::before {
+      content:''; position:absolute; top:0;left:0;right:0; height:2px;
+      background:linear-gradient(to right, var(--accent), transparent); opacity:0; transition:opacity 0.3s;
+    }
+    .team-card:hover { background:var(--bg-stone); }
+    .team-card:hover::before { opacity:1; }
+
+    .team-avatar {
+      width:64px; height:64px; background:var(--bg-mid);
+      border:1px solid rgba(255,255,255,0.08);
+      display:flex; align-items:center; justify-content:center;
+      font-size:1.8rem; margin-bottom:1.2rem;
+    }
+    .team-name {
+      font-family:'Cinzel',serif; font-size:1.05rem; color:var(--text); margin-bottom:0.25rem;
+    }
+    .team-role {
+      font-size:0.72rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--accent2);
+      margin-bottom:1rem; font-family:'Cinzel',serif;
+    }
+    .team-desc { font-size:0.88rem; color:var(--text-dim); line-height:1.65; }
+    .team-tags { display:flex; gap:0.5rem; flex-wrap:wrap; margin-top:1.2rem; }
+    .team-tag {
+      font-size:0.65rem; font-family:'Cinzel',serif; letter-spacing:0.1em; text-transform:uppercase;
+      padding:0.2rem 0.55rem; background:var(--bg-mid); border:1px solid rgba(255,255,255,0.07);
+      color:var(--text-muted);
+    }
+
+    /* Org card */
+    .org-card {
+      background:var(--bg-deep); border:1px solid rgba(255,255,255,0.07);
+      padding:3rem; display:grid; grid-template-columns:1fr 2fr; gap:3rem; align-items:start;
+      margin-bottom:4rem;
+    }
+    .org-logo {
+      width:100%; aspect-ratio:1; background:var(--bg-stone);
+      border:1px solid rgba(255,255,255,0.06);
+      display:flex; align-items:center; justify-content:center;
+      font-size:3rem;
+    }
+    .org-links { display:flex; flex-direction:column; gap:0.75rem; margin-top:1.5rem; }
+    .org-link {
+      font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:0.1em;
+      text-transform:uppercase; color:var(--text-dim); text-decoration:none;
+      display:flex; align-items:center; gap:0.5rem;
+      padding:0.6rem 0; border-bottom:1px solid rgba(255,255,255,0.05);
+      transition:color 0.2s;
+    }
+    .org-link:hover { color:var(--accent); }
+    .org-link span { color:var(--accent); }
+
+    @media(max-width:768px){
+      .org-card { grid-template-columns:1fr; gap:1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">⛏ Berg Attack <span class="nav-network">· AAlex Networks</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="leitung.html" class="active">Leitung</a></li>
+    <li><a href="momente.html">Momente</a></li>
+    <li><a href="server.html">Server</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <!--<li><a href="impressum.html">Impressum</a></li>-->
+  </ul>
+  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+</nav>
+
+<div class="page-header">
+  <span class="page-label">// Das Team</span>
+  <h1 class="page-title">Die Leitung</h1>
+  <p class="page-desc">Wer hinter Berg Attack steckt – die Personen, die den Server am Laufen halten.</p>
+</div>
+
+<div class="main">
+
+  <!-- Team members -->
+  <span class="s-label">// Aktive Mitglieder</span>
+  <h2 class="s-title" style="margin-bottom:2rem">Server-<em>Team</em></h2>
+
+  <div class="team-grid">
+    <div class="team-card reveal">
+      <img class="team-avatar" alt="Layxe" src="../assets/playerheads/Layxe.png">
+      <div class="team-name">Layxe</div>
+      <div class="team-role">1. Macht</div>
+      <div class="team-desc">Server Owner, hat die meiste Macht.</div>
+      <div class="team-tags">
+        <span class="team-tag">Owner</span>
+        <span class="team-tag">1. Macht</span>
+        <span class="team-tag">Gründer</span>
+      </div>
+    </div>
+
+    <div class="team-card reveal" style="transition-delay:0.1s">
+      <img class="team-avatar" alt="schiliyhead" src="../assets/playerheads/schildkyroete.png">
+      <div class="team-name">schildkyroete</div>
+      <div class="team-role">2. Macht</div>
+      <div class="team-desc">Hat am 2. meisten Macht.</div>
+      <div class="team-tags">
+        <span class="team-tag">Macht</span>
+      </div>
+    </div>
+
+    <div class="team-card reveal" style="transition-delay:0.2s">
+      <img class="team-avatar" alt="CreeInfHead" src="../assets/playerheads/CreeInfHead.png">
+      <div class="team-name">CreeInf</div>
+      <div class="team-role">3. Macht</div>
+      <div class="team-desc">Ist Mitgründer des Projekts hat am 3. meisten Macht.</div>
+      <div class="team-tags">
+        <span class="team-tag">Gründer</span>
+        <span class="team-tag">3. Macht</span>
+        <span class="team-tag">Admin</span>
+        <span class="team-tag">Orga</span>
+
+      </div>
+    </div>
+
+        <div class="team-card reveal" style="transition-delay:0.1s">
+      <img class="team-avatar" alt="SoSO" src="../assets/playerheads/Sir_SoSoKing.png">
+      <div class="team-role">Administrator</div>
+      <div class="team-desc"></div>
+      <div class="team-tags">
+        <span class="team-tag">Admin</span>
+        <span class="team-tag">Orga</span>
+      </div>
+    </div>
+
+            <div class="team-card reveal" style="transition-delay:0.1s">
+      <img class="team-avatar" alt="FaMa" src="../assets/playerheads/FaMa207.png">
+      <div class="team-name">FaMa207</div>
+      <div class="team-role">Administrator</div>
+      <div class="team-desc"></div>
+      <div class="team-tags">
+        <span class="team-tag">Admin</span>
+      </div>
+    </div>
+        <div class="team-card reveal" style="transition-delay:0.1s">
+      <img class="team-avatar" alt="Nobody" src="../assets/playerheads/Nobody_CV.png">
+      <div class="team-name">Nobody_CV</div>
+      <div class="team-role">Moderation</div>
+      <div class="team-desc"></div>
+      <div class="team-tags">
+        <span class="team-tag">Mod</span>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="hr-fancy"/>
+
+<footer>
+  <div class="footer-logo">Berg Attack</div>
+  <div class="footer-network">by AAlex Networks · Minecraft SMP</div>
+  <ul class="footer-nav">
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="leitung.html">Leitung</a></li>
+    <li><a href="momente.html">Momente</a></li>
+    <li><a href="server.html">Server</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+    <li><a href="datenschutz.html">Datenschutz</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 AAlex Networks · Alle Rechte vorbehalten</div>
+</footer>
+
+<script>
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}}),{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

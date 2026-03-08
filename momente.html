@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Berg Attack — Besondere Momente</title>
+  <link rel="stylesheet" href="theme.css"/>
+  <link rel="stylesheet" href="base.css"/>
+  <style>
+    /* Masonry-style gallery */
+    .gallery-filters {
+      display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:2.5rem;
+    }
+    .filter-btn {
+      font-family:'Cinzel',serif; font-size:0.68rem; letter-spacing:0.12em;
+      text-transform:uppercase; padding:0.45rem 1rem;
+      background:var(--bg-stone); border:1px solid rgba(255,255,255,0.07);
+      color:var(--text-muted); cursor:pointer; transition:all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background:var(--accent); color:var(--bg-coal);
+      border-color:var(--accent);
+    }
+
+    .gallery-grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:6px;
+    }
+    .gallery-item {
+      position:relative; overflow:hidden;
+      background:var(--bg-stone);
+      cursor:pointer;
+    }
+    .gallery-item.big { grid-column:span 2; grid-row:span 2; }
+    .gallery-item img {
+      width:100%; height:100%; object-fit:cover; display:block;
+      min-height:220px;
+      filter:brightness(0.82) saturate(1.1);
+      transition:transform 0.5s ease, filter 0.5s ease;
+    }
+    .gallery-item:hover img { transform:scale(1.05); filter:brightness(1) saturate(1.2); }
+    .gallery-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 55%);
+      opacity:0; transition:opacity 0.3s; pointer-events:none;
+    }
+    .gallery-item:hover .gallery-overlay { opacity:1; }
+    .gallery-caption {
+      position:absolute; bottom:0; left:0; right:0;
+      padding:1rem; transform:translateY(8px); opacity:0;
+      transition:all 0.3s;
+    }
+    .gallery-item:hover .gallery-caption { transform:translateY(0); opacity:1; }
+    .gallery-caption-title {
+      font-family:'Cinzel',serif; font-size:0.8rem; letter-spacing:0.1em;
+      text-transform:uppercase; color:var(--text);
+    }
+    .gallery-caption-sub { font-size:0.72rem; color:var(--text-dim); margin-top:0.2rem; }
+
+    /* Placeholder if images fail */
+    .gallery-item .placeholder {
+      width:100%; min-height:220px; display:flex; align-items:center; justify-content:center;
+      font-size:3rem; background:var(--bg-stone);
+    }
+    .gallery-item.big .placeholder { min-height:450px; }
+
+    /* Lightbox */
+    .lightbox {
+      position:fixed; inset:0; z-index:500;
+      background:rgba(0,0,0,0.92); backdrop-filter:blur(8px);
+      display:flex; align-items:center; justify-content:center;
+      opacity:0; pointer-events:none; transition:opacity 0.3s;
+    }
+    .lightbox.open { opacity:1; pointer-events:all; }
+    .lightbox img { max-width:90vw; max-height:85vh; object-fit:contain; border:1px solid rgba(255,255,255,0.08); }
+    .lb-close {
+      position:absolute; top:1.5rem; right:1.5rem;
+      font-size:1.8rem; color:var(--text-muted); cursor:pointer;
+      background:none; border:none; transition:color 0.2s;
+    }
+    .lb-close:hover { color:var(--accent); }
+    .lb-info {
+      position:absolute; bottom:2rem; left:50%; transform:translateX(-50%);
+      text-align:center;
+    }
+    .lb-title { font-family:'Cinzel',serif; font-size:0.9rem; color:var(--text); }
+    .lb-season { font-size:0.75rem; color:var(--accent); margin-top:0.25rem; }
+
+    @media(max-width:768px){
+      .gallery-grid { grid-template-columns:1fr 1fr; }
+      .gallery-item.big { grid-column:span 2; }
+    }
+    @media(max-width:480px){
+      .gallery-grid { grid-template-columns:1fr; }
+      .gallery-item.big { grid-column:span 1; grid-row:span 1; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">⛏ Berg Attack <span class="nav-network">· AAlex Networks</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="leitung.html">Leitung</a></li>
+    <li><a href="momente.html" class="active">Momente</a></li>
+    <li><a href="server.html">Server</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <!--<li><a href="impressum.html">Impressum</a></li>-->
+  </ul>
+  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+</nav>
+
+<div class="page-header">
+  <span class="page-label">// Screenshots & Erinnerungen</span>
+  <h1 class="page-title">Besondere Momente</h1>
+  <p class="page-desc">Eine Sammlung der schönsten und ikonischsten Augenblicke aus den Seasons von Berg Attack.</p>
+</div>
+
+<div class="main">
+  <div class="gallery-filters reveal">
+    <button class="filter-btn active">Alle</button>
+    <button class="filter-btn">Season 5</button>
+    <button class="filter-btn">Season 4</button>
+    <button class="filter-btn">Bauprojekte</button>
+    <button class="filter-btn">Highlights</button>
+  </div>
+
+  <div class="gallery-grid reveal" id="galleryGrid">
+
+    <div class="gallery-item big" data-title="Berg Attack Welt" data-season="Season 5"
+         onclick="openLb('https://creeinf.github.io/BergAttackWebsite/media/images/2024-11-20_16.59.07.png','Berg Attack Welt','Season 5')">
+      <img src="https://creeinf.github.io/BergAttackWebsite/media/images/2024-11-20_16.59.07.png"
+           alt="Berg Attack"
+           onerror="this.parentElement.querySelector('.placeholder').style.display='flex';this.style.display='none'">
+      <div class="placeholder" style="display:none">🏔</div>
+      <div class="gallery-overlay"></div>
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">Die Welt von Berg Attack</div>
+        <div class="gallery-caption-sub">Season 5 · Erkundung</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-title="Season 5 Update" data-season="Season 5"
+         onclick="openLb('https://creeinf.github.io/BergAttackWebsite/media/images/2025-05-02_14.10.17.png','Season 5','Neustart')">
+      <img src="https://creeinf.github.io/BergAttackWebsite/media/images/2025-05-02_14.10.17.png"
+           alt="Season 5"
+           onerror="this.parentElement.querySelector('.placeholder').style.display='flex';this.style.display='none'">
+      <div class="placeholder" style="display:none">⚔</div>
+      <div class="gallery-overlay"></div>
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">Season 5 Start</div>
+        <div class="gallery-caption-sub">Neustart · 2025</div>
+      </div>
+    </div>
+
+    <div class="gallery-item" data-title="Dezember 2024" data-season="Season 4"
+         onclick="openLb('https://creeinf.github.io/BergAttackWebsite/media/images/2024-12-12_16.26.38.png','Dezember Build','Season 4')">
+      <img src="https://creeinf.github.io/BergAttackWebsite/media/images/2024-12-12_16.26.38.png"
+           alt="Dezember 2024"
+           onerror="this.parentElement.querySelector('.placeholder').style.display='flex';this.style.display='none'">
+      <div class="placeholder" style="display:none">🏗</div>
+      <div class="gallery-overlay"></div>
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">Dezember Build</div>
+        <div class="gallery-caption-sub">Season 4 · Dezember 2024</div>
+      </div>
+    </div>
+
+    <!-- Placeholder cards to fill the grid nicely -->
+    <div class="gallery-item" style="cursor:default">
+      <div class="placeholder">🌲</div>
+      <div class="gallery-overlay"></div>
+      <div class="gallery-caption">
+        <div class="gallery-caption-title">Kommt bald</div>
+        <div class="gallery-caption-sub">Mehr Screenshots folgen</div>
+      </div>
+    </div>
+    <div class="gallery-item" style="cursor:default">
+      <div class="placeholder">🏰</div>
+    </div>
+    <div class="gallery-item" style="cursor:default">
+      <div class="placeholder">⛏</div>
+    </div>
+
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="closeLb(event)">
+    <button class="lb-close" onclick="document.getElementById('lightbox').classList.remove('open')">✕</button>
+    <img id="lbImg" src="" alt=""/>
+    <div class="lb-info">
+      <div class="lb-title" id="lbTitle"></div>
+      <div class="lb-season" id="lbSeason"></div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Berg Attack</div>
+  <div class="footer-network">by AAlex Networks · Minecraft SMP</div>
+  <ul class="footer-nav">
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="leitung.html">Leitung</a></li>
+    <li><a href="momente.html">Momente</a></li>
+    <li><a href="server.html">Server</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+    <li><a href="datenschutz.html">Datenschutz</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 AAlex Networks · Alle Rechte vorbehalten</div>
+</footer>
+
+<script>
+  function openLb(src, title, season) {
+    document.getElementById('lbImg').src = src;
+    document.getElementById('lbTitle').textContent = title;
+    document.getElementById('lbSeason').textContent = season;
+    document.getElementById('lightbox').classList.add('open');
+  }
+  function closeLb(e) {
+    if (e.target === document.getElementById('lightbox')) {
+      document.getElementById('lightbox').classList.remove('open');
+    }
+  }
+  document.addEventListener('keydown', e => { if(e.key==='Escape') document.getElementById('lightbox').classList.remove('open'); });
+
+  // Filter buttons (visual only)
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}}),{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

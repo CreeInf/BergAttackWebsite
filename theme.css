@@ -1,0 +1,160 @@
+/*
+ ╔══════════════════════════════════════════════════════╗
+ ║          BERG ATTACK — THEME CONFIGURATION           ║
+ ║   Ändere hier die Farben für die gesamte Website     ║
+ ╚══════════════════════════════════════════════════════╝
+
+  FARB-THEMEN (kommentiere eines ein, die anderen aus):
+
+  [1] Standard Gold/Grün  ← aktiv
+  [2] Lava/Orange
+  [3] Ice/Blau
+  [4] Nether/Rot
+  [5] End/Lila
+*/
+
+/* ── [1] STANDARD: Gold & Emerald ── */
+/*
+:root {
+  --accent:        #f5c518;    
+  --accent-light:  #ffe066;    
+  --accent-dim:    #c9a020;    
+  --accent-glow:   rgba(245,197,24,0.35);
+
+  --accent2:       #3ddc84;   
+  --accent2-dim:   rgba(61,220,132,0.15);
+  --accent2-border:rgba(61,220,132,0.25);
+
+  --bg-coal:       #0f0f0f;
+  --bg-deep:       #161616;
+  --bg-stone:      #1e1e1e;
+  --bg-mid:        #252525;
+
+  --text:          #f0ede8;
+  --text-dim:      rgba(240,237,232,0.55);
+  --text-faint:    rgba(240,237,232,0.25);
+  --text-muted:    #888;
+}
+*/
+
+/* ── [2] LAVA: Orange & Rot ── */
+/*
+:root {
+  --accent:        #ff6a00;
+  --accent-light:  #ff9940;
+  --accent-dim:    #cc5500;
+  --accent-glow:   rgba(255,106,0,0.35);
+
+  --accent2:       #ff2d2d;
+  --accent2-dim:   rgba(255,45,45,0.15);
+  --accent2-border:rgba(255,45,45,0.25);
+
+  --bg-coal:       #100808;
+  --bg-deep:       #180e0e;
+  --bg-stone:      #211212;
+  --bg-mid:        #2a1616;
+
+  --text:          #f5ece8;
+  --text-dim:      rgba(245,236,232,0.55);
+  --text-faint:    rgba(245,236,232,0.25);
+  --text-muted:    #9a7070;
+}
+*/
+
+
+/* ── [3] ICE: Eisblau & Cyan ── */
+/*
+:root {
+  --accent:        #5bc8f5;
+  --accent-light:  #8de0ff;
+  --accent-dim:    #3a9ec2;
+  --accent-glow:   rgba(91,200,245,0.35);
+
+  --accent2:       #00e5ff;
+  --accent2-dim:   rgba(0,229,255,0.12);
+  --accent2-border:rgba(0,229,255,0.22);
+
+  --bg-coal:       #080c10;
+  --bg-deep:       #0d1520;
+  --bg-stone:      #121e2e;
+  --bg-mid:        #182538;
+
+  --text:          #e8f4f8;
+  --text-dim:      rgba(232,244,248,0.55);
+  --text-faint:    rgba(232,244,248,0.25);
+  --text-muted:    #6a8fa0;
+}
+*/
+
+
+/* ── [4] NETHER: Dunkelrot & Magenta ── */
+/*
+:root {
+  --accent:        #ff2255;
+  --accent-light:  #ff5577;
+  --accent-dim:    #cc1a44;
+  --accent-glow:   rgba(255,34,85,0.35);
+
+  --accent2:       #ff00aa;
+  --accent2-dim:   rgba(255,0,170,0.12);
+  --accent2-border:rgba(255,0,170,0.22);
+
+  --bg-coal:       #0f0508;
+  --bg-deep:       #180a0d;
+  --bg-stone:      #200d12;
+  --bg-mid:        #2a1018;
+
+  --text:          #f5e8ec;
+  --text-dim:      rgba(245,232,236,0.55);
+  --text-faint:    rgba(245,232,236,0.25);
+  --text-muted:    #9a6070;
+}
+*/
+
+
+/* ── [5] END: Lila & Gold ── */
+/*
+:root {
+  --accent:        #b06aff;
+  --accent-light:  #d09aff;
+  --accent-dim:    #8040dd;
+  --accent-glow:   rgba(176,106,255,0.35);
+
+  --accent2:       #f5c518;
+  --accent2-dim:   rgba(245,197,24,0.12);
+  --accent2-border:rgba(245,197,24,0.22);
+
+  --bg-coal:       #0a0810;
+  --bg-deep:       #100d1a;
+  --bg-stone:      #171222;
+  --bg-mid:        #1e172c;
+
+  --text:          #ede8f5;
+  --text-dim:      rgba(237,232,245,0.55);
+  --text-faint:    rgba(237,232,245,0.25);
+  --text-muted:    #7a6a90;
+}
+*/
+
+/* ── [6] Emerald: Green & Dark Green ── */
+
+:root {
+  --accent:        #00ff2a;
+  --accent-light:  #00f028;
+  --accent-dim:    #14a800;
+  --accent-glow:   rgba(0, 92, 8, 0.35);
+
+  --accent2:       #00b8be;
+  --accent2-dim:   rgba(24, 164, 245, 0.12);
+  --accent2-border:rgba(24, 212, 245, 0.22);
+
+  --bg-coal:       #081008;
+  --bg-deep:       #0d1a0e;
+  --bg-stone:      #171222;
+  --bg-mid:        #172c1b;
+
+  --text:          #ede8f5;
+  --text-dim:      rgba(237,232,245,0.55);
+  --text-faint:    rgba(237,232,245,0.25);
+  --text-muted:    #7a6a90;
+}

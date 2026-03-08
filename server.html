@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Berg Attack — Server-Info</title>
+  <link rel="stylesheet" href="theme.css"/>
+  <link rel="stylesheet" href="base.css"/>
+  <style>
+    .info-grid {
+      display:grid; grid-template-columns:1fr 1fr; gap:2px;
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.05);
+      margin-bottom:3rem;
+    }
+    .info-cell {
+      background:var(--bg-coal); padding:2rem;
+      transition:background 0.2s;
+    }
+    .info-cell:hover { background:var(--bg-stone); }
+    .info-cell-label {
+      font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.25em;
+      text-transform:uppercase; color:var(--accent2); margin-bottom:0.5rem;
+    }
+    .info-cell-value {
+      font-family:'Cinzel',serif; font-size:1.1rem; color:var(--text);
+    }
+    .info-cell-sub { font-size:0.82rem; color:var(--text-dim); margin-top:0.3rem; line-height:1.5; }
+
+    .status-dot {
+      display:inline-block; width:8px; height:8px; border-radius:50%;
+      background:var(--accent2); margin-right:0.4rem;
+      animation:pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%,100%{box-shadow:0 0 0 0 var(--accent2-dim);}
+      50%{box-shadow:0 0 0 6px transparent;}
+    }
+
+    /* Season timeline */
+    .timeline { position:relative; padding-left:2rem; }
+    .timeline::before {
+      content:''; position:absolute; left:0; top:0; bottom:0; width:1px;
+      background:linear-gradient(to bottom, var(--accent), transparent);
+    }
+    .timeline-item { position:relative; padding-bottom:2.5rem; }
+    .timeline-item::before {
+      content:''; position:absolute; left:-2rem; top:6px;
+      width:9px; height:9px;
+      background:var(--bg-coal); border:2px solid var(--accent);
+      transition:background 0.2s;
+    }
+    .timeline-item:hover::before { background:var(--accent); }
+    .timeline-item.current::before { background:var(--accent); box-shadow:0 0 12px var(--accent-glow); }
+    .tl-season {
+      font-family:'Cinzel',serif; font-size:0.68rem; letter-spacing:0.2em;
+      text-transform:uppercase; color:var(--accent); margin-bottom:0.3rem;
+    }
+    .tl-title {
+      font-family:'Cinzel',serif; font-size:1rem; color:var(--text); margin-bottom:0.4rem;
+    }
+    .tl-desc { font-size:0.85rem; color:var(--text-dim); line-height:1.6; }
+    .tl-badge {
+      display:inline-block; margin-top:0.5rem;
+      font-size:0.62rem; font-family:'Cinzel',serif; letter-spacing:0.1em; text-transform:uppercase;
+      padding:0.2rem 0.6rem; background:var(--accent2-dim); border:1px solid var(--accent2-border); color:var(--accent2);
+    }
+
+    /* Rules */
+    .rules-list { list-style:none; display:flex; flex-direction:column; gap:2px; }
+    .rule-item {
+      background:var(--bg-deep); padding:1.2rem 1.5rem;
+      border-left:2px solid transparent; transition:border-color 0.2s, background 0.2s;
+      display:flex; align-items:flex-start; gap:1rem;
+    }
+    .rule-item:hover { border-left-color:var(--accent); background:var(--bg-stone); }
+    .rule-num {
+      font-family:'Cinzel Decorative',serif; font-size:1.2rem;
+      color:var(--accent); opacity:0.4; min-width:28px;
+    }
+    .rule-text { font-size:0.9rem; color:var(--text-dim); line-height:1.6; }
+    .rule-text strong { color:var(--text); }
+
+    @media(max-width:768px){
+      .info-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">⛏ Berg Attack <span class="nav-network">· AAlex Networks</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="leitung.html">Leitung</a></li>
+    <li><a href="momente.html">Momente</a></li>
+    <li><a href="server.html" class="active">Server</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <!--<li><a href="impressum.html">Impressum</a></li>-->
+  </ul>
+  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+</nav>
+
+<div class="page-header">
+  <span class="page-label">// Technische Details & Regeln</span>
+  <h1 class="page-title">Server-Info</h1>
+  <p class="page-desc">Alles Wissenswerte über den Berg Attack Server — Status, Leistung, Seasons und Regeln.</p>
+</div>
+
+<div class="main">
+
+  <!-- Status & Specs -->
+  <span class="s-label">// Aktueller Status</span>
+  <h2 class="s-title" style="margin-bottom:2rem">Server-<em>Daten</em></h2>
+
+  <div class="info-grid reveal">
+    <div class="info-cell">
+      <div class="info-cell-label">Status</div>
+      <div class="info-cell-value"><span class="status-dot"></span>Online & Aktiv</div>
+      <div class="info-cell-sub">Season 5 läuft seit 2025</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-cell-label">Aktuelle Season</div>
+      <div class="info-cell-value">Season 5</div>
+      <div class="info-cell-sub">Die aktuellste Season mit neuer Welt</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-cell-label">Max. Spieler gleichzeitig</div>
+      <div class="info-cell-value">6+ Spieler</div>
+      <div class="info-cell-sub">Bisher problemlos ausgehalten</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-cell-label">Server-Typ</div>
+      <div class="info-cell-value">Privater SMP</div>
+      <div class="info-cell-sub">Nur für eingeladene Freunde · Java Edition</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-cell-label">Betreiber</div>
+      <div class="info-cell-value">AAlex Networks</div>
+      <div class="info-cell-sub">Auch: AAlex SMP · CreepCraft.net</div>
+    </div>
+    <div class="info-cell">
+      <div class="info-cell-label">Spielmodus</div>
+      <div class="info-cell-value">Survival</div>
+      <div class="info-cell-sub">Kein Kreativmodus · Faire Regeln</div>
+    </div>
+  </div>
+
+  <hr class="hr-fancy"/>
+
+  <!-- Season Timeline -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start" class="reveal">
+    <div>
+      <span class="s-label">// Geschichte</span>
+      <h2 class="s-title" style="margin-bottom:2rem">Season-<em>Verlauf</em></h2>
+      <div class="timeline">
+        <div class="timeline-item current">
+          <div class="tl-season">Season 5</div>
+          <div class="tl-title">Neues Kapitel</div>
+          <div class="tl-desc">Die aktuelle Season mit frischer Welt und neuen Bauprojekten.</div>
+          <span class="tl-badge">● Aktiv · 2025</span>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-season">Season 4</div>
+          <div class="tl-title">Wachstum der Community</div>
+          <div class="tl-desc">Mehr Spieler, mehr Builds, mehr Abenteuer. Eine der aktivsten Seasons.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-season">Season 3</div>
+          <div class="tl-title">Erste große Projekte</div>
+          <div class="tl-desc">Die Community wächst zusammen und startet erste epische Bauprojekte.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-season">Season 2</div>
+          <div class="tl-title">Stabilisierung</div>
+          <div class="tl-desc">Server läuft stabiler, mehr regelmäßige Spieler.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-season">Season 1</div>
+          <div class="tl-title">Der Anfang</div>
+          <div class="tl-desc">Berg Attack startet. Die erste Welt, die ersten Gebäude, die ersten Erinnerungen.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rules -->
+    <div>
+      <span class="s-label">// Regeln</span>
+      <h2 class="s-title" style="margin-bottom:2rem">Server-<em>Regeln</em></h2>
+      <ul class="rules-list">
+        <li class="rule-item">
+          <span class="rule-num">01</span>
+          <div class="rule-text"><strong>Kein Griefing</strong> – Fremde Gebäude dürfen nicht zerstört oder beschädigt werden.</div>
+        </li>
+        <li class="rule-item">
+          <span class="rule-num">02</span>
+          <div class="rule-text"><strong>Kein Stehlen</strong> – Gegenstände aus fremden Kisten nehmen ist verboten.</div>
+        </li>
+        <li class="rule-item">
+          <span class="rule-num">03</span>
+          <div class="rule-text"><strong>Fair Play</strong> – Cheats, Hacks und unfaire Mods sind nicht erlaubt.</div>
+        </li>
+        <li class="rule-item">
+          <span class="rule-num">04</span>
+          <div class="rule-text"><strong>Respekt</strong> – Alle Spieler behandeln sich gegenseitig mit Respekt.</div>
+        </li>
+        <li class="rule-item">
+          <span class="rule-num">05</span>
+          <div class="rule-text"><strong>PvP nur mit Zustimmung</strong> – Spieler gegen Spieler nur wenn beide zustimmen.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-logo">Berg Attack</div>
+  <div class="footer-network">by AAlex Networks · Minecraft SMP</div>
+  <ul class="footer-nav">
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="leitung.html">Leitung</a></li>
+    <li><a href="momente.html">Momente</a></li>
+    <li><a href="server.html">Server</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+    <li><a href="datenschutz.html">Datenschutz</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 AAlex Networks · Alle Rechte vorbehalten</div>
+</footer>
+
+<script>
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}}),{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>

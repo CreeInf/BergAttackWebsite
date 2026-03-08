@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Berg Attack — Startseite</title>
+  <link rel="stylesheet" href="theme.css"/>
+  <link rel="stylesheet" href="base.css"/>
+  <style>
+    /* ── HERO ── */
+    .hero {
+      min-height:100vh; display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      position:relative; overflow:hidden;
+      text-align:center; padding:6rem 2rem 4rem;
+    }
+    .hero-bg {
+      position:absolute; inset:0;
+      background:
+        linear-gradient(180deg, transparent 0%, var(--bg-coal) 88%),
+        repeating-linear-gradient(90deg,transparent 0,transparent 63px,rgba(255,255,255,0.025) 63px,rgba(255,255,255,0.025) 64px),
+        repeating-linear-gradient(0deg,transparent 0,transparent 63px,rgba(255,255,255,0.025) 63px,rgba(255,255,255,0.025) 64px),
+        radial-gradient(ellipse 110% 70% at 50% 20%, var(--accent-glow) 0%, transparent 65%),
+        var(--bg-deep);
+    }
+    .particles { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+    .particle {
+      position:absolute; width:5px; height:5px;
+      background:var(--accent); opacity:0;
+      animation:floatUp var(--dur,8s) var(--delay,0s) ease-in infinite;
+      left:var(--x,50%);
+    }
+    .particle:nth-child(2n) { background:var(--accent2); width:3px; height:3px; }
+    .particle:nth-child(3n) { border-radius:0; width:4px; height:4px; }
+    @keyframes floatUp {
+      0%   { opacity:0; transform:translateY(110vh) rotate(0deg); }
+      10%  { opacity:0.7; }
+      90%  { opacity:0.3; }
+      100% { opacity:0; transform:translateY(-10vh) rotate(360deg); }
+    }
+
+    .hero-badge {
+      font-family:'Cinzel',serif; font-size:0.7rem; letter-spacing:0.25em;
+      text-transform:uppercase; color:var(--accent2);
+      background:var(--accent2-dim); border:1px solid var(--accent2-border);
+      padding:0.35rem 1rem; margin-bottom:1.5rem; display:inline-block;
+      animation:fadeUp 0.7s 0.2s both;
+    }
+    .hero-title {
+      font-family:'Cinzel Decorative',serif;
+      font-size:clamp(3.5rem,12vw,8rem); font-weight:900;
+      line-height:0.9; letter-spacing:-0.02em;
+      background:linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 45%, var(--accent) 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+      filter:drop-shadow(0 0 50px var(--accent-glow));
+      animation:titleReveal 0.9s 0.4s both;
+    }
+    .hero-sub {
+      font-family:'Cinzel',serif; font-size:clamp(0.9rem,2.5vw,1.4rem);
+      color:var(--text-dim); letter-spacing:0.35em; text-transform:uppercase;
+      margin-top:0.5rem; animation:fadeUp 0.7s 0.8s both;
+    }
+    .hero-desc {
+      max-width:500px; margin:2rem auto 0;
+      font-size:1rem; color:var(--text-dim); line-height:1.75;
+      animation:fadeUp 0.7s 1s both;
+    }
+    .hero-cta {
+      margin-top:2.5rem; display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;
+      animation:fadeUp 0.7s 1.2s both;
+    }
+    .hero-scroll {
+      position:absolute; bottom:2rem; left:50%; transform:translateX(-50%);
+      display:flex; flex-direction:column; align-items:center; gap:0.4rem;
+      color:var(--text-faint); font-size:0.65rem; letter-spacing:0.2em;
+      text-transform:uppercase; font-family:'Cinzel',serif;
+      animation:fadeUp 0.7s 1.8s both;
+    }
+    .hero-scroll::after {
+      content:''; width:1px; height:36px;
+      background:linear-gradient(to bottom, var(--text-faint), transparent);
+      animation:scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse { 0%,100%{opacity:0.3;} 50%{opacity:0.9;} }
+
+    /* ── FEATURE STRIP ── */
+    .strip {
+      background:var(--bg-deep);
+      border-top:1px solid rgba(255,255,255,0.05);
+      border-bottom:1px solid rgba(255,255,255,0.05);
+      padding:3rem 2rem;
+    }
+    .strip-inner {
+      max-width:1100px; margin:0 auto;
+      display:grid; grid-template-columns:repeat(3,1fr); gap:2px;
+    }
+    .strip-item {
+      padding:2rem; text-align:center;
+      border-right:1px solid rgba(255,255,255,0.05);
+    }
+    .strip-item:last-child { border:none; }
+    .strip-icon { font-size:2rem; margin-bottom:0.75rem; display:block; }
+    .strip-num {
+      font-family:'Cinzel Decorative',serif;
+      font-size:2.8rem; color:var(--accent);
+      filter:drop-shadow(0 0 16px var(--accent-glow));
+      line-height:1;
+    }
+    .strip-label {
+      font-family:'Cinzel',serif; font-size:0.7rem;
+      letter-spacing:0.2em; text-transform:uppercase;
+      color:var(--text-muted); margin-top:0.4rem;
+    }
+
+    /* ── ABOUT SPLIT ── */
+    .about-split {
+      max-width:1100px; margin:0 auto; padding:6rem 2rem;
+      display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;
+    }
+    .about-img { position:relative; }
+    .about-img img {
+      width:100%; display:block;
+      filter:brightness(0.85) contrast(1.1) saturate(1.05);
+      border:1px solid rgba(255,255,255,0.07);
+    }
+    .about-img::before {
+      content:''; position:absolute; inset:-8px;
+      border:1px solid rgba(255,255,255,0.04); z-index:-1;
+    }
+    .about-img .img-tag {
+      position:absolute; bottom:10px; right:10px;
+      font-family:'Cinzel',serif; font-size:0.65rem; letter-spacing:0.15em;
+      text-transform:uppercase; background:var(--accent); color:var(--bg-coal);
+      padding:0.25rem 0.6rem;
+    }
+    .tag-row { display:flex; gap:1rem; flex-wrap:wrap; margin-top:2rem; }
+    .tag {
+      font-family:'Cinzel',serif; font-size:0.68rem; letter-spacing:0.12em;
+      text-transform:uppercase; padding:0.3rem 0.75rem;
+      background:var(--bg-stone); border:1px solid rgba(255,255,255,0.08);
+      color:var(--text-dim);
+    }
+    .tag.accent { background:var(--accent2-dim); border-color:var(--accent2-border); color:var(--accent2); }
+
+    /* ── NEWS PREVIEW ── */
+    .news-preview {
+      background:var(--bg-deep);
+      border-top:1px solid rgba(255,255,255,0.05);
+      padding:5rem 2rem;
+    }
+    .news-preview-inner { max-width:1100px; margin:0 auto; }
+    .news-header { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:2.5rem; flex-wrap:wrap; gap:1rem; }
+    .news-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+    .news-card {
+      background:var(--bg-coal); padding:1.8rem;
+      border:1px solid rgba(255,255,255,0.05);
+      transition:border-color 0.25s, background 0.25s;
+      cursor:default;
+    }
+    .news-card:hover { background:var(--bg-stone); border-color:rgba(255,255,255,0.1); }
+    .news-chip {
+      font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.15em;
+      text-transform:uppercase; color:var(--accent);
+      background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08);
+      padding:0.25rem 0.6rem; display:inline-block; margin-bottom:1rem;
+    }
+    .news-card-title {
+      font-family:'Cinzel',serif; font-size:0.95rem; color:var(--text);
+      margin-bottom:0.6rem; line-height:1.4;
+    }
+    .news-card-body { font-size:0.85rem; color:var(--text-dim); line-height:1.65; }
+
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(14px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @keyframes titleReveal {
+      from { opacity:0; transform:scale(0.94) translateY(20px); }
+      to   { opacity:1; transform:scale(1) translateY(0); }
+    }
+
+    @media(max-width:768px){
+      .strip-inner { grid-template-columns:1fr; }
+      .strip-item { border:none; border-bottom:1px solid rgba(255,255,255,0.05); }
+      .about-split { grid-template-columns:1fr; gap:2.5rem; padding:4rem 2rem; }
+      .news-grid { grid-template-columns:1fr; }
+      .news-header { flex-direction:column; align-items:flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">⛏ Berg Attack <span class="nav-network">· AAlex Networks</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Startseite</a></li>
+    <li><a href="leitung.html">Leitung</a></li>
+    <li><a href="momente.html">Momente</a></li>
+    <li><a href="server.html">Server</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <!--<li><a href="impressum.html">Impressum</a></li>-->
+  </ul>
+  <button class="nav-burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="particles" id="particles"></div>
+
+  <div class="hero-badge">⚔ Minecraft SMP · Season 5</div>
+  <h1 class="hero-title">Berg<br>Attack</h1>
+  <p class="hero-sub">AAlex Networks</p>
+  <p class="hero-desc">„In die Berge gehen heißt nach Hause gehen.“</p>
+  <p class="hero-desc">- John Muir</p>
+  <div class="hero-cta">
+    <a href="momente.html" class="btn btn-gold">Momente ansehen</a>
+    <a href="server.html" class="btn btn-outline">Server-Info</a>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</section>
+
+<!-- STAT STRIP -->
+<div class="strip">
+  <div class="strip-inner reveal">
+    <div class="strip-item">
+      <span class="strip-icon">🏆</span>
+      <div class="strip-num">5</div>
+      <div class="strip-label">Aktuelle Seasons</div>
+    </div>
+    <div class="strip-item">
+      <span class="strip-icon">👥</span>
+      <div class="strip-num">14</div>
+      <div class="strip-label">Spieler</div>
+    </div>
+    <div class="strip-item">
+      <span class="strip-icon">🌍</span>
+      <div class="strip-num">∞</div>
+      <div class="strip-label">Spaß</div>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT SPLIT -->
+<div class="about-split">
+  <div class="about-img reveal">
+    <img src="https://creeinf.github.io/BergAttackWebsite/media/images/chatgpt_image_30._apr._2025_14_25_34-large.png"
+         alt="Berg Attack"
+         onerror="this.style.cssText='background:var(--bg-stone);min-height:320px;display:block;width:100%';this.removeAttribute('src')">
+    <span class="img-tag">Season 5</span>
+  </div>
+  <div class="reveal" style="transition-delay:0.15s">
+    <span class="s-label">// Was ist Berg Attack?</span>
+    <h2 class="s-title">Ein SMP unter <em>Freunden</em></h2>
+    <p class="s-body">BergAttack ist ein Privater Minecraft SMP der inspiriert von CraftAttack ist. Der Name kommt von der ersten Season wo der Spawn sehr bergig war und eben von CraftAttack.</p>
+
+    <div style="margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap;">
+      <a href="leitung.html" class="btn btn-gold">Zur Leitung</a>
+      <a href="kontakt.html" class="btn btn-outline">Kontakt</a>
+    </div>
+  </div>
+</div>
+
+<!-- NEWS PREVIEW -->
+<div class="news-preview">
+  <div class="news-preview-inner">
+    <div class="news-header reveal">
+      <div>
+        <span class="s-label">// Aktuelles</span>
+        <h2 class="s-title">Was ist <em>neu?</em></h2>
+      </div>
+      <a href="server.html" class="btn btn-outline" style="margin-bottom:0.5rem">Alle Infos →</a>
+    </div>
+    <div class="news-grid">
+      <div class="news-card reveal" style="transition-delay:0.1s">
+        <span class="news-chip">🗳️ Umfrage</span>
+        <div class="news-card-title">TPA Featur</div>
+        <div class="news-card-body">Wollt ihr ein TPA Featur auf Berg Attack.</div>
+      </div>
+            <div class="news-card reveal">
+        <span class="news-chip">🎉 Event</span>
+        <div class="news-card-title">PvP Event von Lyki </div>
+        <div class="news-card-body">In Frankfurt(-700 ~ -900) am 18.02.26.</div>
+      </div>
+      <div class="news-card reveal" style="transition-delay:0.2s">
+        <span class="news-chip">🗳️ Umfrage</span>
+        <div class="news-card-title">Creeper Block break</div>
+        <div class="news-card-body">Sollen Creeper blöcker zerstören.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Berg Attack</div>
+  <div class="footer-network">by AAlex Networks · Minecraft SMP</div>
+  <ul class="footer-nav">
+    <li><a href="index.html">Startseite</a></li>
+    <li><a href="leitung.html">Leitung</a></li>
+    <li><a href="momente.html">Momente</a></li>
+    <li><a href="server.html">Server</a></li>
+    <li><a href="kontakt.html">Kontakt</a></li>
+    <li><a href="impressum.html">Impressum</a></li>
+    <li><a href="datenschutz.html">Datenschutz</a></li>
+  </ul>
+  <div class="footer-copy">© 2025 AAlex Networks · Alle Rechte vorbehalten</div>
+</footer>
+
+<script>
+  // Particles
+  const c = document.getElementById('particles');
+  for(let i=0;i<30;i++){
+    const p=document.createElement('div'); p.className='particle';
+    p.style.cssText=`--x:${Math.random()*100}%;--dur:${6+Math.random()*10}s;--delay:${Math.random()*12}s`;
+    c.appendChild(p);
+  }
+  // Scroll reveal
+  const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target)}}),{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
