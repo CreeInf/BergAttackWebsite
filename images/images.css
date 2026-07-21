@@ -1,0 +1,276 @@
+/* ========================================
+   GALLERY CARDS
+   ======================================== */
+
+.gallery-image-container {
+  width: 100%;
+  overflow: hidden;
+  background: var(--bg-stone);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-image-container:hover {
+  transform: scale(1.05);
+}
+
+.gallery-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-card-body {
+  padding: 12px;
+  background: var(--bg-mid);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-card-title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 4px;
+  color: var(--text);
+}
+
+.gallery-card-date {
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 8px;
+}
+
+.gallery-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(255,255,255,0.04);
+  color: var(--text);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.tag-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tag-btn {
+  padding: 8px 16px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.tag-btn:hover {
+  border-color: var(--accent);
+}
+
+.tag-btn.active {
+  background: var(--accent);
+  color: var(--bg-coal);
+  border-color: var(--accent);
+}
+
+.gallery-empty {
+  padding: 40px;
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 16px;
+}
+
+/* ========================================
+   LIGHTBOX (VOLLBILDMODUS)
+   ======================================== */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-content {
+  position: relative;
+  width: 90%;
+  height: 90%;
+  max-width: 1400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-image {
+  max-width: 100%;
+  max-height: 80%;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--accent);;
+  font-size: 40px;
+  cursor: pointer;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+  z-index: 10000;
+}
+
+.lightbox-close:hover {
+  transform: scale(1.2);
+}
+
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: var(--accent);
+  font-size: 36px;
+  cursor: pointer;
+  padding: 15px 20px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  z-index: 10000;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.lightbox-prev {
+  left: 20px;
+}
+
+.lightbox-next {
+  right: 20px;
+}
+
+.lightbox-info {
+  text-align: center;
+  color: var(--text);
+  padding: 20px;
+  max-width: 600px;
+}
+
+.lightbox-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.lightbox-date {
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+
+.lightbox-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.lightbox-tags .tag {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--text);
+  padding: 4px 10px;
+  font-size: 12px;
+}
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
+@media (max-width: 768px) {
+  .lightbox-prev,
+  .lightbox-next {
+    padding: 10px 15px;
+    font-size: 28px;
+  }
+
+  .lightbox-prev {
+    left: 10px;
+  }
+
+  .lightbox-next {
+    right: 10px;
+  }
+
+  .lightbox-close {
+    top: 10px;
+    right: 10px;
+    font-size: 32px;
+  }
+
+  .lightbox-content {
+    width: 95%;
+    height: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .lightbox-image {
+    max-height: 60%;
+  }
+
+  .lightbox-title {
+    font-size: 16px;
+  }
+
+  .tag-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}

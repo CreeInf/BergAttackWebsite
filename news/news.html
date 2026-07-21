@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berg Attack — News</title>
+    <link rel="stylesheet" href="../theme.css">
+    <link rel="stylesheet" href="../base.css">
+    <style>
+      .news-page-content {
+        max-width: 1080px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem 5rem;
+      }
+
+      .news-page-intro {
+        max-width: 760px;
+        margin: 0 auto 2.5rem;
+        text-align: center;
+      }
+
+      .news-page-intro .page-title {
+        margin-top: 0.45rem;
+        margin-bottom: 0.8rem;
+        font-size: clamp(2.4rem, 4vw, 4rem);
+      }
+
+      .news-page-intro .page-desc {
+        color: var(--text-dim);
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+
+      .news-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(240px, 1fr));
+        gap: 1.2rem;
+      }
+
+      .news-card-link {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .news-card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 1.9rem;
+        box-shadow: 0 24px 70px rgba(0, 0, 0, 0.18);
+        transition: transform 0.28s ease, background 0.28s ease, border-color 0.28s ease;
+        min-height: 220px;
+      }
+
+      .news-card:hover {
+        transform: translateY(-4px);
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.14);
+      }
+
+      .news-chip {
+        font-family: 'Cinzel', serif;
+        font-size: 0.68rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--accent);
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 0.35rem 0.9rem;
+        display: inline-flex;
+        margin-bottom: 1.15rem;
+      }
+
+      .news-card-title {
+        font-family: 'Cinzel', serif;
+        font-size: 1.15rem;
+        line-height: 1.3;
+        margin-bottom: 0.9rem;
+        color: var(--text);
+      }
+
+      .news-card-body {
+        color: var(--text-dim);
+        font-size: 0.95rem;
+        line-height: 1.75;
+      }
+
+      .news-empty {
+        text-align: center;
+        color: var(--text-dim);
+        margin-top: 3rem;
+      }
+
+      @media (max-width: 960px) {
+        .news-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 680px) {
+        .news-page-content {
+          padding: 3rem 1rem 4rem;
+        }
+
+        .news-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+</head>
+<body class="news-page">
+    <div id="header"></div>
+    <script src="/header-loader.js" defer></script>
+    <main class="main news-page-content">
+        <section class="news-page-intro">
+            <br>
+            <span class="s-label">News</span>
+            <h1 class="page-title">Die neusten Neuigkeiten</h1>
+            <br>
+            <p class="page-desc">Hier findest du Events, Updates und Umfragen.</p>
+            
+        </section>
+
+        <section class="news-grid" id="newsGrid"></section>
+    </main>
+
+    <script type="module" src="news.js" defer></script>
+</body>
+</html>

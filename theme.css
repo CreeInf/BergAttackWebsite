@@ -6,11 +6,6 @@
 
   FARB-THEMEN (kommentiere eines ein, die anderen aus):
 
-  [1] Standard Gold/Grün  ← aktiv
-  [2] Lava/Orange
-  [3] Ice/Blau
-  [4] Nether/Rot
-  [5] End/Lila
 */
 
 /* ── [1] STANDARD: Gold & Emerald ── */
@@ -88,12 +83,12 @@
 
 
 /* ── [4] NETHER: Dunkelrot & Magenta ── */
-/*
+
 :root {
-  --accent:        #ff2255;
-  --accent-light:  #ff5577;
+  --accent:        #ff3488;
+  --accent-light:  #ff55a4;
   --accent-dim:    #cc1a44;
-  --accent-glow:   rgba(255,34,85,0.35);
+  --accent-glow:   rgba(255, 34, 214, 0.35);
 
   --accent2:       #ff00aa;
   --accent2-dim:   rgba(255,0,170,0.12);
@@ -109,7 +104,7 @@
   --text-faint:    rgba(245,232,236,0.25);
   --text-muted:    #9a6070;
 }
-*/
+
 
 
 /* ── [5] END: Lila & Gold ── */
@@ -137,7 +132,7 @@
 */
 
 /* ── [6] Emerald: Green & Dark Green ── */
-
+/*
 :root {
   --accent:        #00ff2a;
   --accent-light:  #00f028;
@@ -158,3 +153,4 @@
   --text-faint:    rgba(237,232,245,0.25);
   --text-muted:    #7a6a90;
 }
+  */

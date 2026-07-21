@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Berg Attack — Bilder</title>
+  <link rel="stylesheet" href="../theme.css" />
+  <link rel="stylesheet" href="../base.css" />
+  <link rel="stylesheet" href="images.css" />
+  <style>
+    .images-page-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 1.25rem 5rem;
+    }
+    .images-page-intro {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 2.5rem;
+    }
+    .images-page-intro .page-title {
+      margin-top: 0.4rem;
+      margin-bottom: 0.8rem;
+      font-size: clamp(2.1rem, 4vw, 3.4rem);
+    }
+    .images-page-intro .page-desc {
+      color: var(--text-dim);
+      line-height: 1.8;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+    .gallery-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.18);
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+    .gallery-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,0.16);
+    }
+    .gallery-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      background: var(--bg-stone);
+    }
+    .gallery-card-body {
+      padding: 1rem 1rem 1.15rem;
+    }
+    .gallery-card-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 0.45rem;
+    }
+    .gallery-empty {
+      text-align: center;
+      color: var(--text-dim);
+      padding: 2rem 0;
+    }
+    .tag-filter-bar {
+      margin: 2rem auto 3rem;
+      text-align: center;
+      max-width: 1200px;
+    }
+    .tag-filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      justify-content: center;
+    }
+    .tag-btn {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      color: var(--text-dim);
+      padding: 0.55rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-family: 'Lato', sans-serif;
+      transition: all 0.25s ease;
+    }
+    .tag-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    .tag-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: var(--bg-coal);
+      font-weight: 600;
+    }
+    .gallery-card-date {
+      font-size: 0.85rem;
+      color: var(--accent2);
+      margin-bottom: 0.5rem;
+    }
+    .gallery-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.6rem;
+    }
+    .gallery-card-tags .tag {
+      display: inline-block;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-dim);
+      padding: 0.3rem 0.65rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      transition: all 0.2s;
+    }
+    .gallery-card-tags .tag:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    @media (max-width: 680px) {
+      .images-page-content {
+        padding: 3rem 1rem 4rem;
+      }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+      .tag-filter-buttons {
+        gap: 0.5rem;
+      }
+      .tag-btn {
+        padding: 0.45rem 0.85rem;
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body class="images-page">
+  <div id="header"></div>
+  <script src="/header-loader.js" defer></script>
+
+  <main class="images-page-content">
+    <section class="images-page-intro">
+        <br>
+      <span class="s-label">Bilder</span>
+      <h1 class="page-title">Bildersammlung</h1>
+      <p class="page-desc">Alle Bilder von besonderen Ereignissen seit Berg Attack 1. Falls ihr selber Bilder habt gerne per E-Mail an alex.ruet@creeinf.ch senden und am besten noch was da passiert ist dazu schreiben!</p>
+    </section>
+
+    <div class="tag-filter-bar" id="tagFilterBar"></div>
+
+    <section class="gallery-grid" id="galleryGrid"></section>
+  </main>
+  <script type="module" src="images.js"></script>
+</body>
+</html>

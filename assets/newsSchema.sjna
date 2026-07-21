@@ -1,0 +1,5 @@
+/: schema: News{
+    Type("🗳️ Umfrage","🎉 Event,"‼️ Update","✉️ News"): ;
+    Text: ;
+    Link: null;
+};

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berg Attack — Downloads</title>
+    <link rel="stylesheet" href="../theme.css">
+    <link rel="stylesheet" href="../base.css">
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 100vh;
+        gap: 0.5rem;
+        flex-direction: column;
+        padding-top: 0;
+        margin: 0;
+    }
+    .downloads-content {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    main {
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 4rem 1rem 0;
+    }
+    .download-buttons {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .download-link {
+        display: inline-flex;
+        line-height: 1;
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        color: var(--accent);
+        font: inherit;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+    .download-link.disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+        text-decoration: none;
+        color: var(--text-dim);
+        pointer-events: none;
+    }
+</style>
+<body>
+        <div id="header"></div>
+        <script src="/header-loader.js" defer></script>
+
+        <main class="downloads-content">
+          <div class="download-buttons">
+            <a class="download-link" href="Mod-Blacklist.pdf" target="_blank">Mod Blacklist</a>
+            <span class="download-link disabled">BergAttack6 Modpack</span>
+            <span class="download-link disabled">BergAttack6 Performance Modpack</span>
+          </div>
+        </main>
+
+</body> 
+</html>

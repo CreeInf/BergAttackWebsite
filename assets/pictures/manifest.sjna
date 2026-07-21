@@ -1,0 +1,90 @@
+pic1:{
+    file: "2023-01-06_15.18.54-large.png";
+    title: "Erster Spieler full Dia BA1";
+    date: "06 01 2023";
+    tags: ["Season1"];
+};
+
+pic2:{
+    file: "2023-02-15_18.13.41-large.png";
+    title: "Erster Spieler full Netherite BA1";
+    date: "15 02 2023";
+    tags: ["Season1"];
+};
+
+pic3:{
+    file: "2023-09-26_16.01.40-large.png";
+    title: "Erster Spieler full Netherite BA2";
+    date: "26 09 2023";
+    tags: ["Season2"];
+};
+
+pic4:{
+    file: "2024-01-14_08.53.10-large.png";
+    title: "Erster neuer Spieler BA2";
+    date: "14 01 2024";
+    tags: ["Season2"];
+};
+
+pic5:{
+    file: "2024-01-16_16.55.30-large.png";
+    title: "CreeInfs und FaMa207s Base";
+    date: "16 01 2024";
+    tags: ["Season2"];
+};
+
+pic5:{
+    file: "2024-04-13_20.35.31-large.png";
+    title: "Orga Besprechung";
+    date: "13 04 2024";
+    tags: ["Season3"];
+};
+
+pic6:{
+    file: "2024-10-25_19.28.36-large.png";
+    title: "Start von BergAttack 4";
+    date: "25 10 2024";
+    tags: ["Season4"];
+};
+
+pic7:{
+    file: "2024-10-28_21.52.26-large.png";
+    title: "Erste Spieler full Netherite";
+    date: "28 10 2024";
+    tags: ["Season4"];
+};
+
+pic12:{
+    file: "2024-12-12_16.26.40-large.png";
+    title: "Erstes Event BergAttack 4";
+    date: "12 12 2024";
+    tags: ["Season4"];
+};
+
+pic8:{
+    file: "2024-11-20_16.59.07-large.png";
+    title: "CreeInfs Base";
+    date: "28 10 2024";
+    tags: ["Season4"];
+};
+
+pic9:{
+    file: "2024-12-08_13.13.09-large.png";
+    title: "Servermacht Besuch von schildkyroete";
+    date: "12 08 2024";
+    tags: ["Season4"];
+};
+
+pic10:{
+    file: "2025-05-02_14.10.17-large.png";
+    title: "Start von BergAttack 5";
+    date: "02 05 2025";
+    tags: ["Season5"];
+};
+
+pic11:{
+    file: "2025-05-08_17.51.05-large.png";
+    title: "Erster Spieler full Netherite ";
+    date: "08 05 2025";
+    tags: ["Season5"];
+};
