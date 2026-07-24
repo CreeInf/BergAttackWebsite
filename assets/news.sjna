@@ -1,5 +1,11 @@
 Season_6_Start: {
-    Type: "🎷 Event";
+    Type: "🎉 Event";
     Text: "Season6 startet am 24.07.2025";
+    Link: null;
+};
+
+Schnellster_Ban: {
+    Type: "✉️ News";
+    Text: "Olaf wurde in seinen erste 5min Spielzeit gebannt. Weil er geklaut haut und anschließt auch noch deswegen beleidigt!";
     Link: null;
 };
