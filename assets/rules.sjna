@@ -16,7 +16,10 @@ Shopping_District: [
     "Man darf bis zu 2 Shops haben (Die anzahl von Shops wird zu ende des Projekts hin warscheinlich erhöt) // 1. Der Raketenshop gilt als 2 Shops",
     "Shop Grundstück wird mit Wolle und einem Schild mot dem Ingame Namen drauf geclaimed.",
     "Items die im Shopping Distrikt verkauft werden oder geplant sind dort verkauft zu werden dürfen nur von dem Spieler verkauft werden, dem dieser Shop gehört // 1. Der Spieler darf sich die einahmen und das betreuen vom Shop mit einem oder mehreren anderen Spielern teilen",
-    "Shops darf man ab dem Moment Claimen wo eine Servermacht(aka, CreeInf(Acc: InfCree), Layxe, schildkyroete) // 1. Wer zu früh Claimed darf diese Shops in keiner Weise besitzen"
+    "Shops darf man ab dem Moment Claimen wo eine Servermacht(aka, CreeInf(Acc: InfCree), Layxe, schildkyroete) // 1. Wer zu früh Claimed darf diese Shops in keiner Weise besitzen",
+    "Man darf kein zu großes Grundstück claimen.",
+    "Ein Grundstück im Shopping District claimt man indem man es mit Wolle einkreist und ein Schild mit Shopname und Spielername plaziert."
+
 ];
 
 Ingame_Chat: [
