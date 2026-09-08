@@ -1,3 +1,9 @@
+Regel_Änderung: {
+    Type: "‼️ Rule Change";
+    Text: "Shopping District Regeln §5-6 hinzugefügt";
+    Link: null;
+};
+
 Season_6_Start: {
     Type: "🎉 Event";
     Text: "Season6 startet am 24.07.2025";
