@@ -88,3 +88,10 @@ pic11:{
     date: "08 05 2025";
     tags: ["Season5"];
 };
+
+pic12:{
+    file: "2026-07-24_17.58.54.png.png";
+    title: "Starüt von BergAttack 6 ";
+    date: "24 07 2026";
+    tags: ["Season6"];
+};
