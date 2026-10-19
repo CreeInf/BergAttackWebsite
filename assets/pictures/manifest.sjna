@@ -33,13 +33,6 @@ pic5:{
     tags: ["Season2"];
 };
 
-pic5:{
-    file: "2024-04-13_20.35.31-large.png";
-    title: "Orga Besprechung";
-    date: "13 04 2024";
-    tags: ["Season3"];
-};
-
 pic6:{
     file: "2024-10-25_19.28.36-large.png";
     title: "Start von BergAttack 4";
