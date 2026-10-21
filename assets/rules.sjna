@@ -13,13 +13,13 @@ Allgemeine: [
     "Auf diesem Server gilt die Minecraft-EULA.",
     "Das Benutzen von unerlaubten Modifikationen ist untersagt. Unerlaubte Modifikationen sind alle, die auf der Mod-Blacklist (unter „Downloads" auffindbar) stehen. (Es wird ein Modpack von uns zum Download angeboten, mit dem man gut spielen kann; alle darin enthaltenen Mods sind erlaubt, ausgenommen die Einstellungen, die auf der Blacklist stehen – diese sind nicht aktiviert.) // 1. Library-Mods sind immer erlaubt.",
     "BergAttack 3 existiert nicht!!!"
-]
+];
 
 Ingame_Tode: [
     "Wer nicht getötet werden möchte, kann den Tod zurücksetzen lassen und der Kopf wird gelöscht. Dies kann jedoch von einem Admin verweigert werden (wenn man z. B. zu oft den Löffel abgibt, wie z. B. Tifi_Time). //
     1. Man*innen gilt nur als von einem Spieler getötet, wenn man diesen zuvor nicht selbst angegriffen hat.",
     "Massskilling, Spawntrapping und AFK-Kills sind untersagt (hierzu gelten hohe Strafen)."
-]
+];
 
 Shopping_District: [
     "Man darf bis zu 2 Shops haben (die Anzahl der Shops wird gegen Ende des Projekts wahrscheinlich erhöht). // 1. Der Raketenshop gilt als 2 Shops.",
@@ -29,15 +29,15 @@ Shopping_District: [
     "Ein Shop kann, wenn er zu lange nicht gebaut wird oder je nach Shop zu unzuverlässig ist, von einem Admin wieder entzogen werden.",
     "Man darf kein zu großes Grundstück claimen.",
     "Ein Grundstück im Shopping District claimt man, indem man es mit Blöcken einkreist und ein Schild mit Shopnamen und Spielernamen platziert."
-]
+];
 
 Ingame_Chat: [
     "Bleibt immer freundlich zueinander und bewahrt den nötigen Respekt.",
     "Keine sexistischen oder anzüglichen Nachrichten."
-]
+];
 
 Whatsapp_Gruppenregeln: [
     "Keine GIFs, Sticker oder Ähnliches verschicken.",
     "Bleibt immer freundlich zueinander und beleidigt niemanden.",
     "Keine sexistischen oder anzüglichen Nachrichten."
-]
+];
