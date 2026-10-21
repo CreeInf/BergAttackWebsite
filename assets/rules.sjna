@@ -1,16 +1,25 @@
 Allgemeine: [
+    "Jeder Spieler soll eine schöne Zeit auf diesem Server haben können. //
+    1. Dieses Recht darf nur von einem Admin verweigert werden, um eine Bestrafung durchzusetzen.",
     "Für Trolls, Pranks und Roleplay-Aktionen kann man nicht gebannt werden. Wer jedoch von Trolls, Pranks etc. in Ruhe gelassen werden will, muss andere in Ruhe lassen, wenn die Person dies deutlich kommuniziert hat.",
-    "Den Server zum Laggen zu bringen, kann zu einer Bestrafung führen.",
-    "Stehlen ist verboten, jedoch ist „Stibitzen“ erlaubt. Wer jedoch nichts gestibitzt bekommen will, darf nicht bestohlen werden, wenn diese Person dies deutlich kommuniziert hat. // 1. Spielerköpfe sind von dieser Regel ausgenommen.",
+    "Den Server zu laggen kann zu einer Bestrafung führen.",
+    "Stehlen ist verboten, jedoch ist „Stibitzen" erlaubt. Wer jedoch nicht gestibitzt werden will, darf nicht bestohlen werden, wenn diese Person dies deutlich kommuniziert hat. // 1. Spielerköpfe sind von dieser Regel ausgenommen.",
     "Cheats, Botting, Seedcracking und Seedmaps sind verboten (Lucas, wir schauen auf dich!).",
     "Achtet darauf, dass eure Base genügend Abstand zu anderen Basen hat. Wenn ihr euch unsicher seid, fragt einen Admin oder die Person, deren Base in der Nähe ist.",
     "Das Claimen von Basen/Territorien erfolgt mit Schildern.",
     "Wir behalten uns vor, die Regeln zu ändern.",
-    "Das Weitergeben der IP-Adresse auf jegliche Weise ist untersagt und wird mit einem Raussschmiss aus der Season oder sogar aus dem Projekt sowie einer Geldbuße von 50 €/50 CHF bestraft.",
+    "Das Weitergeben der IP-Adresse auf jegliche Weise ist untersagt und wird mit einem Rauswurf aus der Season oder sogar aus dem Projekt sowie einer Geldbuße von 50 €/50 CHF bestraft.",
     "Durch das Betreten des Servers stimmt man den Serverregeln und den zukünftigen Änderungen zu.",
     "Auf diesem Server gilt die Minecraft-EULA.",
-    "Das Benutzen von unerlaubten Modifikationen ist untersagt. Unerlaubte Modifikationen sind alle, die auf der Mod-Blacklist (unter „Downloads“ auffindbar) stehen. (Es wird ein Modpack von uns zum Download angeboten, mit dem man gut spielen kann; alle darin enthaltenen Mods sind erlaubt, ausgenommen die Einstellungen, die auf der Blacklist stehen – diese sind nicht aktiviert.) // 1. Library-Mods sind immer erlaubt."
-];
+    "Das Benutzen von unerlaubten Modifikationen ist untersagt. Unerlaubte Modifikationen sind alle, die auf der Mod-Blacklist (unter „Downloads" auffindbar) stehen. (Es wird ein Modpack von uns zum Download angeboten, mit dem man gut spielen kann; alle darin enthaltenen Mods sind erlaubt, ausgenommen die Einstellungen, die auf der Blacklist stehen – diese sind nicht aktiviert.) // 1. Library-Mods sind immer erlaubt.",
+    "BergAttack 3 existiert nicht!!!"
+]
+
+Ingame_Tode: [
+    "Wer nicht getötet werden möchte, kann den Tod zurücksetzen lassen und der Kopf wird gelöscht. Dies kann jedoch von einem Admin verweigert werden (wenn man z. B. zu oft den Löffel abgibt, wie z. B. Tifi_Time). //
+    1. Man*innen gilt nur als von einem Spieler getötet, wenn man diesen zuvor nicht selbst angegriffen hat.",
+    "Massskilling, Spawntrapping und AFK-Kills sind untersagt (hierzu gelten hohe Strafen)."
+]
 
 Shopping_District: [
     "Man darf bis zu 2 Shops haben (die Anzahl der Shops wird gegen Ende des Projekts wahrscheinlich erhöht). // 1. Der Raketenshop gilt als 2 Shops.",
@@ -19,15 +28,16 @@ Shopping_District: [
     "Shops darf man erst ab dem Moment claimen, an dem eine Servermacht (aka CreeInf [Acc: InfCree], Layxe, Schildkyroete) dies erlaubt. // 1. Wer zu früh claimt, darf diese Shops in keiner Weise besitzen.",
     "Ein Shop kann, wenn er zu lange nicht gebaut wird oder je nach Shop zu unzuverlässig ist, von einem Admin wieder entzogen werden.",
     "Man darf kein zu großes Grundstück claimen.",
-    "Ein Grundstück im Shopping District claimt man, indem man es mit Wolle einkreist und ein Schild mit Shopnamen und Spielernamen platziert."
-];
+    "Ein Grundstück im Shopping District claimt man, indem man es mit Blöcken einkreist und ein Schild mit Shopnamen und Spielernamen platziert."
+]
 
 Ingame_Chat: [
-    "Bleibt immer freundlich zueinander und bewahrt den nötigen Respekt."
-];
+    "Bleibt immer freundlich zueinander und bewahrt den nötigen Respekt.",
+    "Keine sexistischen oder anzüglichen Nachrichten."
+]
 
 Whatsapp_Gruppenregeln: [
     "Keine GIFs, Sticker oder Ähnliches verschicken.",
     "Bleibt immer freundlich zueinander und beleidigt niemanden.",
     "Keine sexistischen oder anzüglichen Nachrichten."
-];
+]
