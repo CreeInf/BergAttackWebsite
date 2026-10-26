@@ -1,5 +1,11 @@
 Regel_Änderung: {
     Type: "‼️ Rule Change";
+    Text: "PvP Regeln §3-4 added";
+    Link: null;
+};
+
+Regel_Änderung: {
+    Type: "‼️ Rule Change";
     Text: "Algemein §1 hinzugefügt, Shopping District Regeln Tode hinzugefügt, §7 Shoppingdistrict Regeln geändert, Ingame Regeln §2 hinzugefügt!";
     Link: null;
 };
