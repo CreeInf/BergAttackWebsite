@@ -34,7 +34,7 @@ Shopping_District: [
     "Ein Grundstück im Shopping District claimt man, indem man es mit Blöcken einkreist und ein Schild mit Shopnamen und Spielernamen platziert."
 ];
 
-Serversprecker_Regeln: [
+Serversprecher_Regeln: [
     "Der Serversprecher wird alle 2 Montate gewählt indem er von einem Bergsteiger vorgeschlagen wird und anschließent von allen Bergsteigern gewählt wird. // 1. Spieler aus dem Admin/Orga-Team dürfen nicht Serversprecher werden.",
     "Das Admin/Orga Team kann einem Serversprecher mistrauen indem sie intern darüber abstimmen ob diese Person für die Aufgabe geeignet ist.",
     "Spieler können ein Veto gegen einen Serversprecher einlegen und nach einer internen Admin/Orga-Team-Besprechung folgt je nachdem eine Neuwahl, den Bergsteigern wird die Serversprechervertrauensfrage gestellt oder gar nichts.",
