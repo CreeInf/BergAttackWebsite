@@ -12,6 +12,8 @@ Allgemeine: [
     "Auf diesem Server gilt die Minecraft-EULA.",
     "Das Benutzen von unerlaubten Modifikationen ist untersagt. Unerlaubte Modifikationen sind alle, die auf der Mod-Blacklist (unter Downloads auffindbar) stehen. (Es wird ein Modpack von uns zum Download angeboten, mit dem man gut spielen kann; alle darin enthaltenen Mods sind erlaubt, ausgenommen die Einstellungen, die auf der Blacklist stehen – diese sind nicht aktiviert.) // 1. Library-Mods sind immer erlaubt.",
     "BergAttack 3 existiert nicht!!!",
+    "Jeder Spieler hat das Recht Veto gegen eine Regelen einzulegen, es dann wird über deren änderung/entfernung abgestimmt. Außer bei den Bedingunen aus Abs.1-2 // 1. Wenn die Regel unentfernbar ist kann die Regel nur geändert werden. // 2. Wenn die Regel unänderbar ist kann die Regel nicht entfert werden und nicht geändert werden.",
+    "Jeder Spieler kann eine neue Regel vorschlagen, das Admin/Orga-Team entscheidet dann ob diese Regel hinzugefügt wird, eine Abstimmung gemacht wird oder ob sie nicht hinzugefügt wird."
 ];
 
 PvP_Regeln: [
@@ -19,6 +21,7 @@ PvP_Regeln: [
     "Massskilling, Spawntrapping und AFK-Kills sind untersagt (hierzu gelten hohe Strafen).",
     "Einen Spieler hunten ohne dessen einverständiss ist strengsstens verboten",
     "Dass absichtliche und mehrfache Totem poppen durch eine PvP Aktion ist verboten",
+    "Es ist kein PvP Server!"
 ];
 
 Shopping_District: [
@@ -29,6 +32,13 @@ Shopping_District: [
     "Ein Shop kann, wenn er zu lange nicht gebaut wird oder je nach Shop zu unzuverlässig ist, von einem Admin wieder entzogen werden.",
     "Man darf kein zu großes Grundstück claimen.",
     "Ein Grundstück im Shopping District claimt man, indem man es mit Blöcken einkreist und ein Schild mit Shopnamen und Spielernamen platziert."
+];
+
+Serversprecker_Regeln: [
+    "Der Serversprecher wird alle 2 Montate gewählt indem er von einem Bergsteiger vorgeschlagen wird und anschließent von allen Bergsteigern gewählt wird. // 1. Spieler aus dem Admin/Orga-Team dürfen nicht Serversprecher werden.",
+    "Das Admin/Orga Team kann einem Serversprecher mistrauen indem sie intern darüber abstimmen ob diese Person für die Aufgabe geeignet ist.",
+    "Spieler können ein Veto gegen einen Serversprecher einlegen und nach einer internen Admin/Orga-Team-Besprechung folgt je nachdem eine Neuwahl, den Bergsteigern wird die Serversprechervertrauensfrage gestellt oder gar nichts.",
+    "Nachdem ein Serverssprecher bestraft werden muss wegen einer Straftat wird den Bergsteigern dei Serversprechervertrauensfrage gestellt."
 ];
 
 Ingame_Chat: [
