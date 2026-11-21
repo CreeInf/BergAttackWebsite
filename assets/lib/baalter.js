@@ -29,8 +29,8 @@ export function calc(aktuelles_bergattack, seasons_dabei, irl_alter) {
   if  (seasons_dabei <= 2) {
     alter = alter - 2;
   }
-
-  return alter + addition;
+  let sum = alter + addition
+  return Math.round(sum);
 }
 
 export const BALTER = { calc };
