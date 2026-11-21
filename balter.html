@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+</head>
+<body>
+
+    <input type="number" id="aktuellesBA" value="6" >
+    <input type="number" id="dabei">
+    <input type="number" id="irlAlter">
+
+    <button id="calculate">Calculate</button>
+
+    <h1 id="alter"></h1>
+
+    <script type="module">
+      import { BALTER } from "./assets/lib/baalter.js";
+
+      const calcButton = document.getElementById("calculate");
+      const alter = document.getElementById("alter");
+
+      calcButton.addEventListener("click", () => {
+        const aktuellesBA = Number(document.getElementById("aktuellesBA").value);
+        const dabei = Number(document.getElementById("dabei").value);
+        const irlAlter = Number(document.getElementById("irlAlter").value);
+
+        alter.textContent = BALTER.calc(aktuellesBA, dabei, irlAlter);
+      });
+    </script>
+
+</body>
+</html>
